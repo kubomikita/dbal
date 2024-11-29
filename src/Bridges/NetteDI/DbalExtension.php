@@ -37,7 +37,7 @@ class DbalExtension extends CompilerExtension
 		if (isset($config['debugger'])) {
 			$debugger = (bool) $config['debugger'];
 		} else {
-			$debugger = class_exists('Tracy\Debugger', false) && Debugger::$productionMode === Debugger::DEVELOPMENT;
+			$debugger = class_exists('Tracy\Debugger', false) && Debugger::$productionMode === Debugger::Development;
 		}
 
 		if ($debugger) {

@@ -18,8 +18,8 @@ class DriverException extends Exception
 	public function __construct(
 		string $message,
 		int $errorCode = 0,
-		string $errorSqlState = null,
-		Exception $previousException = null
+		?string $errorSqlState = null,
+		?Exception $previousException = null
 	)
 	{
 		parent::__construct($message, 0, $previousException);
