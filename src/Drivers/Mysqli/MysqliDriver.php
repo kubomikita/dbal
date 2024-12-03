@@ -200,7 +200,12 @@ class MysqliDriver implements IDriver
 	public function ping(): bool
 	{
 		assert($this->connection !== null);
-		return $this->connection->ping();
+		try {
+			$this->query('SELECT 1');
+			return true;
+		} catch (DriverException) {
+			return false;
+		}
 	}
 
 
